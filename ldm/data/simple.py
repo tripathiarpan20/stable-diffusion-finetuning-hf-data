@@ -280,8 +280,8 @@ def hf_dataset(
     ):
     """Make huggingface dataset with appropriate list of transforms applied
     """
-    ds = load_dataset(name, split=split)
-    load_dataset(name, data_files = {'train': 'data/train.csv'}, split=split)
+    ds = load_dataset(name, data_files = {'train': 'data/train.csv'}, split=split)
+#     load_dataset(name, split=split)
     tform = make_tranforms(image_transforms)
 
     assert image_column in ds.column_names, f"Didn't find column {image_column} in {ds.column_names}"
